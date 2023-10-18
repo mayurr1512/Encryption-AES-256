@@ -63,4 +63,12 @@ object AESHelper {
         val decrypt = cipher.doFinal(textToDecrypt)
         return String(decrypt)
     }
+
+    fun encodeToBase64(dataToEncode: ByteArray): String? {
+        return Base64.encodeToString(dataToEncode, Base64.DEFAULT)
+    }
+
+    fun decodeFromBase64(dataToDecode: String): String {
+        return String(Base64.decode(dataToDecode, Base64.DEFAULT))
+    }
 }

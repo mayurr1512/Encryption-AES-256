@@ -40,6 +40,10 @@ class MainActivity : AppCompatActivity() {
         secretKey = AESHelper.generateSecretKey("abcdefghabcdefghabcdefghabcdefgh")
         iv = AESHelper.generateIV("abcdefghabcdefgh") ***/
 
+        /*** If you want to use Base64 SecretKey and IV use below code. First need to decode the Keys to String
+        secretKey = AESHelper.generateSecretKey(AESHelper.decodeFromBase64("MTIzNDU2Nzg5MDEyMzQ1NjEyMzQ1Njc4OTAxMjM0NTY="))
+        iv = AESHelper.generateIV(AESHelper.decodeFromBase64("YWJjZGVmZ2hpamtsbW5vcA==")) ***/
+
         btnEncrypt.setOnClickListener {
             val textToEncrypt = edtEncrypt.text.toString().trim()
 
